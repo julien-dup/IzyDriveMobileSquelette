@@ -7,7 +7,7 @@ import Toto1 from '../screens/Toto1';
 import Toto2 from '../screens/Toto2';
 import LogScreen from '../screens/LogScreen';
 import MyAccount from '../screens/MyAccount';
-import GalerieScreen from '../screens/GalerieScreen';
+import Reservation from '../screens/Reservation';
 import TabBar from './TabBar';
 
 
@@ -27,7 +27,7 @@ const StackNavigator = () => (
                 <Stack.Screen name="toto1" component={Toto1} />
                 <Stack.Screen name="toto2" component={Toto2} />            
                 <Stack.Screen name="MyAccount" component={MyAccount} />
-                <Stack.Screen name="GalerieScreen" component={GalerieScreen} />
+                <Stack.Screen name="Reservation" component={Reservation} />
                 <Stack.Screen name="TabBar" component={TabBar} />
             </Stack.Navigator>
    

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'
 import Icon from 'react-native-ionicons'
-import MyAccount from '../screens/MyAccount';
-import GalerieScreen from '../screens/GalerieScreen';
+import Reservation from '../screens/Reservation';
+import MonCompte from '../screens/MyAccount';
 import 'react-native-gesture-handler'
 import Toto1 from '../screens/Toto1';
 import Toto2 from '../screens/Toto2';
@@ -55,8 +55,8 @@ const TabBar = () => {
       })}
     >
       
-      <Tab.Screen name="Mon Compte" component={GalerieScreen} />
-      <Tab.Screen name="Mes reservations" component={MyAccount}  />
+      <Tab.Screen name="Mon Compte" component={MonCompte} />
+      <Tab.Screen name="Mes reservations" component={Reservation}  />
        <Tab.Screen name="User Info" component={Toto1}    tabBarOptions={{
         showLabel: true, // Afficher les labels par défaut
         tabBarShowLabel: false // Masquer tous les labels
