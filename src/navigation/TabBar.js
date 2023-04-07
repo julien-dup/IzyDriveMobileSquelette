@@ -1,23 +1,30 @@
-import * as React from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
+import React, { useState } from 'react';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'
+import Icon from 'react-native-ionicons'
 import MyAccount from '../screens/MyAccount';
 import GalerieScreen from '../screens/GalerieScreen';
+import 'react-native-gesture-handler'
 import Toto1 from '../screens/Toto1';
-import { NavigationContainer } from '@react-navigation/native';
-import StackNavigator from './StackNavigator';
+import Toto2 from '../screens/Toto2';
+
+
 
 const Tab = createBottomTabNavigator();
 
 const TabBar = () => {
-  
+
+  const [showLabel, setShowLabel] = useState(false); // Etat pour afficher ou masquer le label
+  const hideLabel = () => {
+    setShowLabel(true);
+  }
+
+ 
   return (
 
-   
-       
     <Tab.Navigator
-    initialRouteName='Profil'
+    initialRouteName='Mon Compte'
       screenOptions={({ route }) => ({
         tabBarStyle: {
                   backgroundColor: '#6e64e7',             
@@ -27,18 +34,21 @@ const TabBar = () => {
                 tabBarLabelStyle : {
                   color : 'white'
                 },
+        // tabBarShowLabel: false,  //permet de cacher le label de l'icône
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Mon Compte') {
-            iconName = 'home'
-          } else if (route.name === 'Images') {
-            iconName = 'list'
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'Mes reservations') {
+            iconName = focused ? 'home' : 'home-outline';
           }
-          else if (route.name === 'toto') {
-            iconName = 'list'
+          else if (route.name === 'User Info') {
+            iconName = focused ? 'home' : 'home-outline';
+          }   else if (route.name === 'Toto2') {
+            iconName = ''
           }
           // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color='white'} />
+          return <Icon name={iconName} size={32} color={color='white'} />
           
         }
 
@@ -47,8 +57,11 @@ const TabBar = () => {
       
       <Tab.Screen name="Mon Compte" component={GalerieScreen} />
       <Tab.Screen name="Mes reservations" component={MyAccount}  />
-      <Tab.Screen name="User Info" component={StackNavigator}  />
-      
+       <Tab.Screen name="User Info" component={Toto1}    tabBarOptions={{
+        showLabel: true, // Afficher les labels par défaut
+        tabBarShowLabel: false // Masquer tous les labels
+      }}/>
+       {showLabel && <Tab.Screen name="Toto2" component={Toto2}  />}
     </Tab.Navigator>
    
    

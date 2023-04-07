@@ -10,6 +10,7 @@ const Toto2 = () => {
         <View>
             <Text>Welcome to TOTO2</Text>
         </View>
+  
     )
 }
 
