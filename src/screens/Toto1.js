@@ -51,7 +51,7 @@ const Toto1 = ({navigation}) => {
 
     return (
         <View
-        style ={{flex: 1}}>
+        style = {styles.background}>
             <Text>Welcome to TOTO1</Text>
             <View
             style ={{flex: 1, alignItems: "center", justifyContent:"center"}}
@@ -110,5 +110,11 @@ const styles = StyleSheet.create ({
     height: 50,
     justifyContent: "center",
     color: "white"
-    }
+    },
+    background : {
+      flex: 1, 
+      justifyContent: "center", 
+      alignItems: "center",
+      backgroundColor: "#9ab7ff"
+  }
 })
