@@ -8,6 +8,7 @@ import MonCompte from '../screens/MyAccount';
 import 'react-native-gesture-handler'
 import Toto1 from '../screens/Toto1';
 import Toto2 from '../screens/Toto2';
+import Vehicules from '../screens/Vehicules';
 
 
 
@@ -46,6 +47,8 @@ const TabBar = () => {
             iconName = focused ? 'home' : 'home-outline';
           }   else if (route.name === 'Toto2') {
             iconName = ''
+          } else if (route.name === 'Vehicules') {
+            iconName = focused ? 'home' : 'home-outline';
           }
           // You can return any component that you like here!
           return <Icon name={iconName} size={32} color={color='white'} />
@@ -56,6 +59,7 @@ const TabBar = () => {
     >
       
       <Tab.Screen name="Mon Compte" component={MonCompte} />
+      <Tab.Screen name="Vehicules" component={Vehicules} />
       <Tab.Screen name="Mes reservations" component={Reservation}  />
        <Tab.Screen name="User Info" component={Toto1}    tabBarOptions={{
         showLabel: true, // Afficher les labels par défaut

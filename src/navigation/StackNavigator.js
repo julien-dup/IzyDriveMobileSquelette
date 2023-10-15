@@ -10,10 +10,6 @@ import MyAccount from '../screens/MyAccount';
 import Reservation from '../screens/Reservation';
 import TabBar from './TabBar';
 
-
-
-
-
 const Stack = createStackNavigator();
 
 
